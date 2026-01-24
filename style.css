@@ -26,9 +26,47 @@ header {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 3rem;
 }
+
+.header-text-container {
+    flex: 2;
+    text-align: center;
+}
+
+.header-qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+}
+.header-qr {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    background: white;
+    border: 3px solid #cdaa80; /* Rappel de votre couleur Or */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.header-qr:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(205, 170, 128, 0.4);
+}
+
+.header-qr-container span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
 
 header::before {
     content: '';
@@ -93,7 +131,8 @@ header::before {
 }
 
 header h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
+    display: inline-block;
     margin: 0;
     text-align: left;
     z-index: 1;
@@ -110,7 +149,7 @@ header h1 {
     animation: borderGlow 5s ease infinite;
     flex: 1;
     max-width: 800px;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 @keyframes borderGlow {
@@ -480,6 +519,7 @@ footer p {
     }
 
 }
+
 
 
 
