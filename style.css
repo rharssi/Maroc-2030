@@ -45,6 +45,7 @@ header {
     z-index: 1;
     justify-content: center;
     flex-shrink:0;
+    animation: float 3s ease-in-out infinite;
 }
 .header-qr {
     width: 120px;
@@ -55,11 +56,16 @@ header {
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease , box-shadow 0.3s ease;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #cdaa80, #997953, #cdaa80, #213a56) border-box;
+    background-size: 400% 400%;
+    animation: borderGlow 5s ease infinite;
 }
 
 .header-qr:hover {
-    transform: scale(1.1) rotate(2deg);
-    box-shadow: 0 8px 20px rgba(205, 170, 128, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(205, 170, 128, 0.5);
 }
 
 .header-qr-container span {
@@ -525,6 +531,7 @@ footer p {
     }
 
 }
+
 
 
 
