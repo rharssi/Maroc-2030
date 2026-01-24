@@ -20,36 +20,40 @@ body {
 header {
     background: linear-gradient(135deg, #0f1e3f 0%, #213a56 50%, #0f1e3f 100%);
     color: white;
-    padding: 3rem 2rem;
+    padding: 2rem 3rem;
     box-shadow: 0 15px 40px rgba(15, 30, 63, 0.4);
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .header-text-container {
     flex: 2;
     text-align: center;
+    display:flex;
+    justify-content: center;
 }
 
 .header-qr-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     z-index: 1;
+    justify-content: center;
+    flex-shrink:0;
 }
 .header-qr {
-    width: 50px;
-    height: 50px;
-    padding: 5px;
+    width: 60px;
+    height: 60px;
+    padding: 3px;
     background: white;
-    border: 3px solid beige; 
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #cdaa80; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -59,13 +63,13 @@ header {
 }
 
 .header-qr-container span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: bold;
     color: white; 
     text-transform: uppercase;
     letter-spacing: 1px;
     flex-shrink: 0;
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 
@@ -521,6 +525,7 @@ footer p {
     }
 
 }
+
 
 
 
