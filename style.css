@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 18px;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #fffefd 10%, #9b8c7a 90%);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #0f1e3f 0%, #213a56 50%, #0f1e3f 100%);
+    color: white;
+    padding: 3rem 2rem;
+    box-shadow: 0 15px 40px rgba(15, 30, 63, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(205, 170, 128, 0.08) 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(50px, 50px) rotate(360deg); }
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #0f1e3f 0%, #997953 50%, #cdaa80 100%) border-box;
+    box-shadow: 
+        0 15px 40px rgba(33, 58, 86, 0.5),
+        0 5px 15px rgba(205, 170, 128, 0.4),
+        0 0 30px rgba(153, 121, 83, 0.3);
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.profile-img:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 
+        0 20px 50px rgba(33, 58, 86, 0.6),
+        0 10px 25px rgba(205, 170, 128, 0.5),
+        0 0 40px rgba(153, 121, 83, 0.4);
+}
+
+header h1 {
+    font-size: 1.9rem;
+    margin: 0;
+    text-align: left;
+    z-index: 1;
+    position: relative;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    padding: 1.2rem 1.8rem;
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(135deg, #0f1e3f 0%, #213a56 50%, #0f1e3f 100%) padding-box,
+        linear-gradient(90deg, #cdaa80, #997953, #cdaa80, #213a56) border-box;
+    border-radius: 20px;
+    background-size: 400% 400%;
+    animation: borderGlow 5s ease infinite;
+    flex: 1;
+    max-width: 800px;
+    white-space: nowrap;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 25px rgba(205, 170, 128, 0.6), 0 0 50px rgba(33, 58, 86, 0.4);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 35px rgba(153, 121, 83, 0.6), 0 0 60px rgba(205, 170, 128, 0.5);
+    }
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(33, 58, 86, 0.15);
+    backdrop-filter: blur(15px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #213a56;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(135deg, #213a56, #997953, #cdaa80);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover::before {
+    opacity: 1;
+}
+
+nav a:hover {
+    color: #0f1e3f;
+    background: linear-gradient(135deg, rgba(205, 170, 128, 0.1), rgba(153, 121, 83, 0.1));
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(153, 121, 83, 0.2);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: white;
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(120deg, #213a56, #997953, #cdaa80, #213a56) border-box;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(33, 58, 86, 0.12);
+    transition: all 0.4s ease;
+    background-size: 400% 400%;
+    animation: sectionBorderGlow 6s ease infinite;
+}
+
+@keyframes sectionBorderGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 45px rgba(33, 58, 86, 0.2),
+        0 8px 20px rgba(205, 170, 128, 0.15);
+}
+
+h2 {
+    color: #0f1e3f;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    padding: 1.2rem 1.8rem;
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #213a56, #cdaa80, #997953) border-box;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(33, 58, 86, 0.15);
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 60%;
+    background: linear-gradient(180deg, #213a56, #cdaa80);
+    border-radius: 0 5px 5px 0;
+}
+
+p {
+    color: #374151;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+strong {
+    color: #213a56;
+    font-weight: 700;
+}
+
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step-card {
+    background: white;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #213a56, #997953) border-box;
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 58, 86, 0.1);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(33, 58, 86, 0.2);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #997953 0%, #cdaa80 100%);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(153, 121, 83, 0.3);
+}
+
+.step-card h3 {
+    color: #0f1e3f;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.step-card p {
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(33, 58, 86, 0.15);
+}
+
+th {
+    background: linear-gradient(135deg, #0f1e3f 0%, #213a56 100%);
+    color: white;
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+tr:hover {
+    background: linear-gradient(90deg, rgba(205, 170, 128, 0.08), rgba(153, 121, 83, 0.05));
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.button-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+button {
+    background: linear-gradient(135deg, #0f1e3f 0%, #213a56 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(33, 58, 86, 0.3);
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(205, 170, 128, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(33, 58, 86, 0.4);
+    background: linear-gradient(135deg, #213a56 0%, #0f1e3f 100%);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.btn-email {
+    display: inline-block;
+    background: linear-gradient(135deg, #997953 0%, #cdaa80 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(153, 121, 83, 0.3);
+}
+
+.btn-email:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(205, 170, 128, 0.4);
+    background: linear-gradient(135deg, #cdaa80 0%, #997953 100%);
+}
+
+footer {
+    background: linear-gradient(135deg, #0f1e3f 0%, #213a56 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 -5px 20px rgba(33, 58, 86, 0.2);
+}
+
+footer p {
+    color: white;
+}
+
+.ascii-art {
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin: 1.5rem 0;
+    color: #cdaa80;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        padding: 1rem;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    main {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 0.7rem;
+    }
+
+    button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
