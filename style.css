@@ -158,7 +158,7 @@ header h1 {
         linear-gradient(90deg, #cdaa80, #997953, #cdaa80, #213a56) border-box;
     border-radius: 20px;
     background-size: 400% 400%;
-    animation: borderGlow 5s ease infinite;
+    animation: borderGlow 5s ease-in-out infinite;
     flex: 1;
     max-width: 650px;
     white-space: normal;
@@ -531,6 +531,7 @@ footer p {
     }
 
 }
+
 
 
 
