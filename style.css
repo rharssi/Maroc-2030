@@ -43,11 +43,11 @@ header {
     z-index: 1;
 }
 .header-qr {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     padding: 5px;
     background: white;
-    border: 3px solid #cdaa80; /* Rappel de votre couleur Or */
+    border: 3px solid beige; 
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
@@ -64,6 +64,8 @@ header {
     color: white; 
     text-transform: uppercase;
     letter-spacing: 1px;
+    flex-shrink: 0;
+    margin-left: 1rem;
 }
 
 
@@ -519,6 +521,7 @@ footer p {
     }
 
 }
+
 
 
 
