@@ -104,7 +104,7 @@ body {
 header {
     background: linear-gradient(135deg, #0f1e3f 0%, #213a56 50%, #0f1e3f 100%);
     color: white;
-    padding: 2rem 3rem;
+    padding: 4rem 3rem;
     box-shadow: 0 15px 40px rgba(15, 30, 63, 0.4);
     position: relative;
     overflow: hidden;
@@ -132,8 +132,8 @@ header {
     animation: float 3s ease-in-out infinite;
 }
 .header-qr {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     padding: 6px;
     background: white;
     border: 3px solid beige; 
@@ -191,8 +191,8 @@ header::before {
 
 
 .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     margin: 0;
     border-radius: 50%;
@@ -227,7 +227,7 @@ header::before {
 }
 
 header h1 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     display: inline-block;
     margin: 0;
     text-align: left;
@@ -235,16 +235,16 @@ header h1 {
     position: relative;
     color: white;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-    padding: 1.2rem 1.8rem;
-    border: 3px solid transparent;
+    padding: 1.7rem 2.3rem;
+    border: 4px solid transparent;
     background: 
         linear-gradient(135deg, #0f1e3f 0%, #213a56 50%, #0f1e3f 100%) padding-box,
         linear-gradient(90deg, #cdaa80, #997953, #cdaa80, #213a56) border-box;
-    border-radius: 20px;
+    border-radius: 25px;
     background-size: 400% 400%;
-    animation: borderGlow 5s ease-in-out infinite;
+    animation: borderGlow 5s ease-in-out infinite ;
     flex: 1;
-    max-width: 650px;
+    max-width: 800px;
     white-space: normal;
 }
 
@@ -261,13 +261,20 @@ header h1 {
 
 nav {
     background: rgba(255, 255, 255, 0.95);
-    padding: 1rem;
+    padding: 1.6rem 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 20px rgba(33, 58, 86, 0.15);
     backdrop-filter: blur(15px);
 }
+
+
+
+
+
+
+
 
 nav ul {
     list-style: none;
@@ -281,11 +288,12 @@ nav a {
     text-decoration: none;
     color: #213a56;
     font-weight: 600;
-    padding: 0.8rem 1.8rem;
+    padding: 1rem 2.2rem;
     border-radius: 30px;
     transition: all 0.3s ease;
     position: relative;
     border: 2px solid transparent;
+    font-size: 1.4rem;
 }
 
 nav a::before {
